@@ -1,0 +1,100 @@
+萌犬资讯为网站主页:分享一些漂亮的萌犬图片，和与狗狗相关的各种新闻资讯；
+
+萌犬百科主要介绍犬的分类来源与辨别，帮助爱犬人士更多的对犬种有所了解；
+
+萌犬医生则更新常见的犬类疾病，提醒主人及时发现自己狗狗的健康问题；
+
+萌犬知道允许人们发布问题，并由热心人士解答；萌犬认领主要是发布狗狗丢失的消息，
+
+萌犬资讯
+添加咨询
+
+萌犬百科
+添加百科
+
+萌犬问题
+萌犬诊断
+
+知道管理
+添加知道
+
+认领信息
+
+create database if not exists dog;
+use dog;
+
+#咨询
+create table if not exists zixun(
+	zixunId int primary key auto_increment,
+	title varchar(50) null,
+	content text null,
+	image varchar(30) default 'no.jpg',
+	addTime timestamp default current_timestamp
+);
+
+#百科
+create table if not exists baike(
+	baikeId int primary key auto_increment,
+	type varchar(20) null,
+	description text null,
+	image varchar(30) default 'no.jpg',
+	addTime timestamp default current_timestamp
+);
+
+#萌犬医生
+create table if not exists doc(
+	docId int primary key auto_increment,
+	title varchar(30) null,
+	content text null,
+	addTime timestamp default current_timestamp
+);
+
+
+
+create table if not exists question(
+	qId int primary key auto_increment,
+	question text null,
+	addTime timestamp default current_timestamp
+); 
+create table if not exists answer(
+	aId int primary key auto_increment,
+	title varchar(50) null,
+	answer text null,
+	addTime timestamp default current_timestamp
+);
+
+#萌犬知道
+create table if not exists zhidao(
+	zhidaoId int primary key auto_increment,
+	title varchar(30) null,
+	content text null,
+	addTime timestamp default current_timestamp
+);
+
+
+
+#萌犬认领
+create table if not exists renling(
+	renlingId int primary key auto_increment,
+	content text null,
+	name varchar(20) null,
+	tel int null,
+	email varchar(30) null,
+	addTime timestamp default current_timestamp
+);
+	
+#发布
+create table if not exists fabu(
+	fabuId int primary key auto_increment,
+	type varchar(20) null,
+	description text null,
+	image varchar(30) default 'no.jpg',
+	addTime timestamp default current_timestamp
+);
+	
+	
+	
+	
+	
+	
+	
